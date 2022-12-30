@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Deepak;
+    src: url('../css/fonts/Concert_One/ConcertOne-Regular.ttf') ;
+}
+@font-face {
+    font-family: Nanu;
+    src: url('../css/fonts/Kaushan_Script/KaushanScript-Regular.ttf') ;
+}
+.deepak{
+    font-family: Deepak;
+}
+.nanu{
+    font-family: Nanu;
+}
+.mmg {
+    margin-right: 1000px;
+}
+.rmm{
+    --bs-gutter-x: -2.5rem;
+}
+

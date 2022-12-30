@@ -1,0 +1,502 @@
+{% extends "index.html" %}
+{% load static %}
+<!-- -- Card start --  -->
+{% block body %}
+<link rel="stylesheet" href="{% static 'js/bootstrap.js' %}">
+<link rel="stylesheet" href="{% static 'js/bootstrap.bundle.js' %}">
+
+<div id="alert"></div>
+<div class="container-fluid">
+    <div class="row mt-3 rmm">
+        <div class="col ">
+            <div class="card shadow " style="width: 18rem;">
+                <img src="static/css/img/vadapaw.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Vada Paw</h5>
+                    <!-- -- dropdown start --  -->
+
+                    <div class="dropdown bg-white ">
+                        {% csrf_token %}
+                        <select name="cat1" id="cat1" class="form-select " data-style="btn-info" data-toggle="collapse">
+                            
+                            {% for i in cat1 %}
+                            <option value="{{i.name}}">{{i.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- -- dropdown End --  -->
+
+                    <!-- -- Input Start --  -->
+                    <div class="input-group mt-2">
+                        <span class="input-group-text">MRP</span>
+                        <input type="number" class="form-control" id="mrp1" aria-label="Amount"
+                            aria-describedby="basic-addon1" value="10">
+                    </div>
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1"
+                            value="1" id="qun1">
+                    </div>
+                    <!-- -- Input End --  -->
+
+                    <!-- -- Button Start --  -->
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary mt-2" type="button" id="submitvada">ADD</button>
+                    </div>
+                    <!-- -- Button Start --  -->
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="static/css/img/samosa.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Samosa</h5>
+                    <!-- -- dropdown start --  -->
+
+                    <div class="dropdown bg-white ">
+                        <select name="" id="cat2" class="form-select " data-style="btn-info" data-toggle="collapse">
+                            {% for i in cat2 %}
+                            <option value="{{i.name}}">{{i.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- -- dropdown End --  -->
+                    <!-- -- Input Start --  -->
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">MRP</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1"
+                            id="mrp2" value="10">
+                    </div>
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1"
+                            value="1" id="qun2">
+                    </div>
+                    <!-- -- Input End --  -->
+
+                    <!-- -- Button Start --  -->
+                    <div class="d-grid gap-2 ">
+                        <button class="btn btn-primary mt-2" type="button" id="submitsamosa">ADD</button>
+                    </div>
+                    <!-- -- Button Start --  -->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="static/css/img/idli.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Idli</h5>
+                    <!-- -- dropdown start --  -->
+
+                    <div class="dropdown bg-white ">
+                        <select name="" id="cat3" class="form-select " data-style="btn-info" data-toggle="collapse">
+                            {% for i in cat3 %}
+                            <option value="{{i.name}}">{{i.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- -- dropdown End --  -->
+                    <!-- -- Input Start --  -->
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">MRP</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1"
+                            id="mrp3" value="30">
+                    </div>
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1">
+                    </div>
+                    <!-- -- Input End --  -->
+
+                    <!-- -- Button Start --  -->
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary mt-2" type="button">ADD</button>
+                    </div>
+                    <!-- -- Button Start --  -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="static/css/img/tea.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tea & Coffee</h5>
+                    <!-- -- dropdown start --  -->
+
+                    <div class="dropdown bg-white ">
+                        <select name="" id="cat4" class="form-select " data-style="btn-info" data-toggle="collapse">
+                            {% for i in cat4 %}
+                            <option value="{{i.name}}">{{i.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- -- dropdown End --  -->
+                    <!-- -- Input Start --  -->
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">MRP</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1"
+                            id="mrp4" value="10">
+                    </div>
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1">
+                    </div>
+                    <!-- -- Input End --  -->
+
+                    <!-- -- Button Start --  -->
+                    <div class="d-grid gap-2 ">
+                        <button class="btn btn-primary mt-2" type="button">ADD</button>
+                    </div>
+                    <!-- -- Button Start --  -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow" style="width: 18rem;">
+                <img src="static/css/img/coc.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cold Drinks</h5>
+                    <!-- -- dropdown start --  -->
+
+                    <div class="dropdown bg-white ">
+                        <select name="" id="" class="form-select " data-style="btn-info" data-toggle="collapse">
+                            <option value="">Simple vadapaw</option>
+                            <option value="">cheeze vadapaw</option>
+                        </select>
+                    </div>
+
+                    <!-- -- dropdown End --  -->
+                    <!-- -- Input Start --  -->
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">MRP</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mt-2">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                        <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1">
+                    </div>
+                    <!-- -- Input End --  -->
+
+                    <!-- -- Button Start --  -->
+                    <div class="d-grid gap-2 ">
+                        <button class="btn btn-primary mt-2" type="button">ADD</button>
+                    </div>
+                    <!-- -- Button Start --  -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- -- Card End --  -->
+
+<div class="container">
+    <div class="row m-5 p-4 border border-3 rounded border-primary shadow " style="background-color: #d1d1e0;">
+        <h2 class="text-center mb-5 nanu fw-semibold"> #Customized Orders</h2>
+        <div class="col">
+            <div class="dropdown ">
+
+                <select name="" id="mycat" class="form-select shadow " data-style="btn-info" data-toggle="collapse">
+                    <option>Select catogry</option>
+                    {% for i in mycat %}
+                    <option value="{{i.id}}">{{i.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="dropdown ">
+
+                <select name="subcat" id="subcat" class="form-select shadow " data-style="btn-info"
+                    data-toggle="collapse">
+                   
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group ">
+
+                <span class="input-group-text" id="basic-addon1">MRP</span>
+                <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1"
+                    id="mrp00">
+            </div>
+        </div>
+        <div class="col">
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Quantity</span>
+                <input type="number" class="form-control" aria-label="Amount" aria-describedby="basic-addon1" value="1">
+            </div>
+        </div>
+        <div class="col">
+            <div class="d-grid gap-2  ">
+                <button class="btn btn-primary " type="button" id="submitall">ADD</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- -- Table  Start --  -->
+<div class="container mt-5">
+    <div class="row mt-5 border border-3 rounded border-primary shadow text-center" >
+      <table class=" table table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col ">Sr No</th>
+                <th scope="col">Catogery</th>
+                <th scope="col">Sub-Catogry</th>
+                <th scope="col">Mrp</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col">Time</th>
+                <th scope="col" style="padding-right: 0px;" >Delete</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            {% for i in data %}
+            <tr>
+                <td scope="col">{{i.id}}</td>
+                <td scope="col">{{i.catogery}}</td>
+                <td scope="col">{{i.sub_catogery}}</td>
+                <td scope="col">{{i.mrp}}</td>
+                <td scope="col">{{i.quantity}}</td>
+                <td scope="col">{{i.total}}</td>
+                <td scope="col" style="padding-right: 0px;" >{{i.date}}</td>
+                <td scope="col">
+                    <div class="d-grid gap-2  ">
+
+                        <button class="btn  bg-danger small text-white">Delete</button>
+                    </div>
+                </td>
+
+    </div>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+</div>
+<!-- -- Table  End --  -->
+<!-- -- Footer Start --  -->
+<footer class=" sticky-footer bg-secondary mt-3">
+    <div class="container my-auto">
+        <div class="copyright text-center myauto">
+
+            <span class="text-white">Copyright © Deepak Sharma 2022</span>
+        </div>
+
+    </div>
+{% include "list.html" %}
+</footer>
+<!-- -- Footer End--  -->
+<script src="../static/js/jquery.js"></script>
+<link rel="stylesheet" href="{% static 'js/jquery.js' %}">
+<script>
+
+    $('#cat1').change(function () {
+        var scat = $('#cat1').val();
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'load_mrp' %}",
+            data: {
+                mrp: scat,
+                csrfmiddlewaretoken: csf
+            },
+            success: function (data) {
+                console.log("this come")
+                x = data.mrp;
+                var p = x[0].mrp;
+                $('#mrp1').val(p);
+            }
+
+        });
+    });
+
+    $("#cat2").change(function () { })
+    $('#cat2').change(function () {
+        var scat = $('#cat2').val();
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'load_mrp' %}",
+            data: {
+                mrp: scat,
+                csrfmiddlewaretoken: csf
+            },
+            success: function (data) {
+                console.log('this is data')
+
+                console.log(data.mrp)
+                x = data.mrp;
+                console.log(x)
+                var p = x[0].mrp;
+                $('#mrp2').val(p);
+            }
+
+        });
+    });
+
+
+    $('#cat3').change(function () {
+        var scat = $('#cat3').val();
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'load_mrp' %}",
+            data: {
+                mrp: scat,
+                csrfmiddlewaretoken: csf
+            },
+            success: function (data) {
+                x = data.mrp;
+                console.log(x)
+                var p = x[0].mrp;
+                $('#mrp3').val(p);
+            }
+        });
+    });
+
+
+    $('#subcat').change(function () {
+        var scat = $('#subcat').val();
+        console.log(scat)
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'load_mrp' %}",
+            data: {
+                mrp: scat,
+                csrfmiddlewaretoken: csf
+            },
+            success: function (data) {
+                x = data.mrp;
+                console.log(x)
+                var p = x[0].mrp;
+                $('#mrp00').val(p);
+            }
+        });
+    });
+
+
+    $('#mycat').change(function () {
+        var tcat = $('#mycat').val();
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'sub_cat' %}",
+            data: {
+                myscat: tcat,
+                csrfmiddlewaretoken: csf
+            },
+            success: function (data) {
+                $('#subcat').html(data)
+            }
+        });
+    });
+
+    $("#cat4").change(function () { })
+    $('#cat4').change(function () {
+        var scat = $('#cat4').val();
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: "POST",
+            url: "{% url 'load_mrp' %}",
+            data: {
+                mrp: scat,
+                csrfmiddlewaretoken: csf
+            },
+            success: function (data) {
+                x = data.mrp;
+                console.log(x)
+                var p = x[0].mrp;
+                $('#mrp4').val(p);
+            }
+        });
+    });
+
+    function successalt(qun, cat) {
+        $('#alert').append(
+            '<div class="alert alert-warning alert-dismissible fade show" role="alert">' +
+            '<strong>' + qun + ' ' + cat + ' ADDED </strong> <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button> </div>'
+        )
+    };
+
+    $('#submitvada').click(function () {
+        var subCatogry = $('#cat1').val();
+        var mrp = $('#mrp1').val();
+        var quantity = $('#qun1').val();
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        mydata = {
+            cat: ' Vada Pav',
+            subcat: subCatogry,
+            mrp: mrp,
+            quantity: quantity,
+            csrfmiddlewaretoken: csf
+
+        }
+        $.ajax({
+            type: "POST",
+            url: "{% url 'add_data' %}",
+            data: mydata,
+            success: function (data) {
+                if (data.status == 'done') {
+                    alert('Data ADDED')
+                }
+            }
+        })
+    });
+
+
+    function send_data(cat1, subcat1, mrp1, quantity1) {
+        let csf = $('input[name=csrfmiddlewaretoken]').val();
+        mydata = {
+            cat: cat1,
+            subcat: subcat1,
+            mrp: mrp1,
+            quantity: quantity1,
+            csrfmiddlewaretoken: csf
+        };
+        $.ajax({
+            type: "POST",
+            url: "{% url 'add_data' %}",
+            data: mydata,
+            success: function (data) {
+                if (data.status == 'done') {
+                    alert('Data ADDED')
+                }
+            }
+        });
+
+
+    }
+
+    $('#submitsamosa').click(function () {
+        var subCatogry = $('#cat2').val();
+        var mrp = $('#mrp2').val();
+        var quantity = $('#qun2').val();
+        send_data('Samosa', subCatogry, mrp, quantity);
+    });
+
+    $('#submitall').click(function () {
+        var subCatogry = $('#cat2').val();
+        var mrp = $('#mrp2').val();
+        var quantity = $('#qun2').val();
+        send_data('Samosa', subCatogry, mrp, quantity);
+        
+    });
+
+
+</script>
+
+{% endblock body %}

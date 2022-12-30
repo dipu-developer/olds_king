@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Olds Kings {% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+    <link rel="stylesheet" href="{% static 'js/dashboard.js' %}">
+    <link rel="stylesheet" href="{% static 'js/jquery.js' %}">
+    <link rel="stylesheet" href="{% static 'js/bootstrap.js' %}">
+   
+    
+</head>
+
+<body>
+
+    <!-- -- NavBar Start --  -->
+    <nav class="navbar navbar-dark bg-secondary">
+        <form class="container-fluid justify-content-end">
+            <div>
+                <img src="{% static 'css/img/dp' %}" class="rounded mmg" width="55" height="55" alt="">
+            </div>
+            <a href="{% url 'dashboard' %}" class="btn btn-outline-light me-4 " role="button" aria-pressed="true">Home</a>
+            <a href="{% url 'records' %}" class="btn btn-outline-warning me-4 " role="button" aria-pressed="true">DashBoard</a>
+            <a href="{% url 'records' %}" class="btn btn-outline-warning me-4 " role="button" aria-pressed="true">Recordes</a>
+            <a href="{% url 'records' %}" class="btn btn-outline-warning me-4 " role="button" aria-pressed="true">Orders</a>
+        </form>
+    </nav>
+    <!-- -- NavBar End --  -->
+
+    {% block body %}    
+    {% endblock body %}
+</body>
+
+</html>
+

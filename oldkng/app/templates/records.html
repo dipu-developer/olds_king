@@ -1,0 +1,60 @@
+{% extends "index.html" %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col-8"></div>
+        <div class="col-2">
+        </div>
+        <div class="col-2 ">
+            <div class="d-grid gap-2  ">
+
+                <a href="{% url 'exel_convert' %}" class="btn btn-success me-4 " role="button" aria-pressed="true">Exel</a>
+            </div>
+        </div>
+
+        </div>
+</div>
+    <!-- -- Table  Start --  -->
+    <div class="container-fluid mt-5">
+        <div class="row mt-5 border border-3 rounded border-primary shadow text-center" >
+          <table class=" table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col ">Sr No</th>
+                    <th scope="col">Catogery</th>
+                    <th scope="col">Sub-Catogry</th>
+                    <th scope="col">Mrp</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Time</th>
+                    <th scope="col" style="padding-right: 0px;" >Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td scope="col">{{i.id}}</td>
+                    <td scope="col">{{i.catogery}}</td>
+                    <td scope="col">{{i.sub_catogery}}</td>
+                    <td scope="col">{{i.mrp}}</td>
+                    <td scope="col">{{i.quantity}}</td>
+                    <td scope="col">{{i.total}}</td>
+                    <td scope="col" style="padding-right: 0px;" >{{i.date}}</td>
+                    <td scope="col">
+                        <div class="d-grid gap-2  ">
+    
+                            <button class="btn  bg-danger small text-white">Delete</button>
+                        </div>
+                    </td>
+    
+        </div>
+        </tr>
+        {% endfor %}
+    
+        </tbody>
+        </table>
+    </div>
+    </div>
+  </div>
+{% endblock body %}
